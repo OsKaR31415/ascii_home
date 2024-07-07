@@ -1,0 +1,74 @@
+* {
+    --animation-duration: 1s;
+    --font-size: 2vw;
+    text-align: center
+}
+
+
+body {
+    text-align: center;
+    margin: 0px;
+    overflow: hidden;
+}
+
+pre {
+    font-size: var(--font-size);
+    text-align: left;
+
+    line-height: 115%;
+
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+
+}
+
+a {
+    text-decoration: none;
+    color: #6080d0;
+}
+a:visited {
+    /* color: #d070e0; */
+    color: auto;
+}
+
+
+.animate {
+    animation-duration: var(--animation-duration);
+    animation-iteration-count: infinite;
+    /* animation-direction: */ 
+    animation-timing-function: linear;
+
+    height: 0px;
+    position: relative;
+}
+
+.two-frames { animation-name: two_frames;}
+.four-frames { animation-name: four_frames;}
+
+.dl-2-a { animation-delay: 0s;}
+.dl-2-b { animation-delay: calc(var(--animation-duration) / 2); }
+
+.dl-4-a { animation-delay: 0.0s;}
+.dl-4-b { animation-delay: calc(var(--animation-duration) / 4); }
+.dl-4-c { animation-delay: calc(var(--animation-duration) / 2); }
+.dl-4-d { animation-delay: calc(var(--animation-duration) * .75); }
+
+
+
+@keyframes two_frames {
+    from     { opacity: 0%; height: 0px}
+    49.99% { opacity: 0%; height: 0px}
+    50%    { opacity: 100%; height: auto}
+    to     { opacity: 100%; height: auto}
+}
+
+@keyframes four_frames {
+    from     { opacity: 0%; height: 0px}
+    74.99% { opacity: 0%; height: 0px}
+    75%    { opacity: 100%; height: auto}
+    to     { opacity: 100%; height: auto}
+}
+
+
+
